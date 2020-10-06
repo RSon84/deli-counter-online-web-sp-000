@@ -43,5 +43,3 @@ def now_serving(line)
     line.shift # this works in the IDE but no on repl.it
   end
 end
-
-
