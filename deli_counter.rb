@@ -1,45 +1,45 @@
-# Write your code here.
+katz_deli = []
 
-
-def line(array) # this was the one I figured out
-  if array.length >= 1
-    katz_deli = []
-    counter = 1
-    array.each do |name|
-      katz_deli.push("#{counter}. #{name}")
-      counter += 1
-    end
-    puts "The line is currently: #{katz_deli.join(" ")}"
-  else
+def line_method(numinline)
+  line_method_array = []
+  if numinline.length == 0
     puts "The line is currently empty."
-  end
-end
-
-
-def line_simple(array) # this one follows the same mechanics as learn.co
-  current_line = "The simple line is currently:"
-  array.each.with_index(1) do |value, indexemus|
-  # "each.with_index" is the method...must use "index"
-    current_line << " #{indexemus}. #{value},"
-    # "indexemus" is used to illustrate this variable can be different from "index"
-  end
-  puts current_line
-end
-
-
-
-
-def take_a_number(line, new_person)
-  line.push(new_person) # could say: "line << new_person"
-  puts "Welcome, #{new_person}. You are number #{line.length} in line."
-end
-
-
-def now_serving(line)
-  if line.length == 0 # could say: "if deli.empty?"
-    puts"There is nobody waiting to be served!"
   else
-    puts "Currently serving #{line[0]}." # could say: "Currently serving #{line.first}."
-    line.shift # this works in the IDE but no on repl.it
+    line_method_array.each.with_index(0) do |name, index|
+      line_method_array.push("#{index}. #{name}")
+      # push method will push the name into the index 
+    end
+    puts "The line is: #{line_method_array.join(" ")}"
+  end
+end
+
+# 2 Build a method that a new customer will use when entering the deli. 
+# The `take_a_number` method should accept two arguments, the array for 
+# the current line of people (`katz_deli`), and a string containing the 
+# name of the person wishing to join the line. 
+# The method should return the person's name along with their position in line. 
+#**Top-Tip:** *Remember that people like to count from* `1`*, not from* `0` *("zero") 
+#like computers.*
+
+def take_a_number(katz_deli, name)
+  katz_deli.push(name)
+# use the push method for Append — Pushes the given object(s) on to the end of this array. This expression returns the array itself, so several appends may be chained together.
+  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
+# return the person's name along with their position in line by using the hashtag, swingly brackets to call every arguement's iteration   
+end
+
+# Build the `now_serving` method which should call out (i.e. `puts`) 
+# the next person in line and then remove them from the front. 
+# If there is nobody in line, it should call out (`puts`) that 
+# `"There is nobody waiting to be served!"`.
+# can use a boolean to see the array is empty or not, if true then return the string "There is nobody waiting to be served!" 
+# if false, then return "Currently, serving xyz person" - should use a #{} within the string to return the arugment 
+def now_serving(nextinline)
+  if nextinline.empty?
+    puts "There is nobody waiting to be served!"
+  else
+    puts "Currently serving #{nextinline[0]}."
+    nextinline.shift
+    # as people leave the line, then the method will need to move to the next person, so use shift to removes the first element of the nextinline array and returns it (shifting all other elements down by one). Returns nil if the array is empty.
   end
 end
