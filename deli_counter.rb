@@ -13,7 +13,6 @@ def line(array) # this was the one I figured out
   end
 end
 
-line(katz_deli)
 
 def line_simple(array) # this one follows the same mechanics as learn.co
   current_line = "The simple line is currently:"
@@ -25,10 +24,6 @@ def line_simple(array) # this one follows the same mechanics as learn.co
   puts current_line
 end
 
-line_simple(katz_deli)
-#[:foo, :bar, :baz].each.with_index(1) do |value, index|
-#    puts "#{index}: #{value}"
-#end
 
 
 
@@ -37,7 +32,6 @@ def take_a_number(line, new_person)
   puts "Welcome, #{new_person}. You are number #{line.length} in line."
 end
 
-take_a_number(katz_deli, "Fyvish")
 
 def now_serving(line)
   if line.length == 0 # could say: "if deli.empty?"
