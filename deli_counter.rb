@@ -13,13 +13,13 @@ def line(array)
 end
 
 
-def line_simple(array)
-  current_line = "The line is currently:"
-  array.each.with_index(1) do |value, indexemus|
-    current_line << " #{indexemus}. #{value},"
-  end
-  puts current_line
-end
+#def line_simple(array)
+#  current_line = "The line is currently:"
+#  array.each.with_index(1) do |value, indexemus|
+#    current_line << " #{indexemus}. #{value},"
+#  end
+#  puts current_line
+#end
 
 
 
