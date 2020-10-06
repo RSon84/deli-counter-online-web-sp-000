@@ -12,18 +12,6 @@ def line(array)
   end
 end
 
-
-#def line_simple(array)
-#  current_line = "The line is currently:"
-#  array.each.with_index(1) do |value, indexemus|
-#    current_line << " #{indexemus}. #{value},"
-#  end
-#  puts current_line
-#end
-
-
-
-
 def take_a_number(line, new_person)
   line.push(new_person)
   puts "Welcome, #{new_person}. You are number #{line.length} in line."
